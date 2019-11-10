@@ -19,12 +19,16 @@ Use LDA clustering technique as in <a href="https://www.research.manchester.ac.u
         - `PROVIDER_TEFUKPRN` underscore `PROVIDER_NAME` underscore `.pdf`
     - `TEFYearTwo_AllSubmissions_txt/` folder
         - We convert all the PDF documents to TXT files.
+    - `TEFYearTwo_AllSubmissions_txt_pl2sin/` folder
+        - We replace all plural words with the singular forms.
 - `input/`
     - ...
 
 `code/` 
 
-  - `convert_pdf2txt` (convert directory in one go)
+  - `convert_pdf2txt.R` (convert directory in one go)
+  - ... (convert plural to singular for whole directory)
+  - `text2vec_whole.R` (perform LDA)
   - ...
 
 
