@@ -1,5 +1,7 @@
 # TEFCluster
-Explore the Teaching Excellence Framework (TEF) submissions using clustering and related techniques.
+Explore the Teaching Excellence Framework (TEF) submissions using clustering and related techniques. Work by Phil Reed for PGCert assignment 2019-20. 
+
+[Jump straight to visualisation](result/LDA_plot.html) _work in progress_
 
 Uses [TEF data from Office for Students](https://www.officeforstudents.org.uk/advice-and-guidance/teaching/tef-data/get-the-data/).
 
@@ -37,7 +39,7 @@ create a visualisation of the topics.
 `result`
 
 - `LDA_plot.Rmd` The knitR file to launch the visualization
-- `LDA_plot.html` The knitted visualization
+- `[LDA_plot.html](result/LDA_plot.html)` The knitted visualization
 - `whole_doc_topic_probabilities.csv` Probability of each topic in each doc
 - `whole_word_vectors_for_each_topic.csv` Which words occur in which topics
 - `ldavis/' folder
