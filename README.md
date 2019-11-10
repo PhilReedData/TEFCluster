@@ -36,11 +36,17 @@ create a visualisation of the topics.
 - `text2vec_whole.R` Perform LDA and create visualization
   - ...
 
-`result`
+`result/`
 
 - `LDA_plot.Rmd` The knitR file to launch the visualization
-- `[LDA_plot.html](result/LDA_plot.html)` The knitted visualization
+- [`LDA_plot.html`](result/LDA_plot.html) The knitted visualization
 - `whole_doc_topic_probabilities.csv` Probability of each topic in each doc
 - `whole_word_vectors_for_each_topic.csv` Which words occur in which topics
-- `ldavis/' folder
+- `ldavis/` folder
    - The HTML, CSS and JavaScript files for the `LDA_plot.html` file
+
+## Next steps
+- Further clean the data, manual work, maybe tokenize instead of stem.
+- Identify what the major topics are and which ones used by which applicants.
+- Consider the gold/silver/bronze award (perhaps three visualisations).
+- Consider HE/FE and other splits.
