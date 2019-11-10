@@ -10,6 +10,8 @@
 #install.packages('tm')
 #devtools::install_github('dselivanov/text2vec')
 #install.packages('SnowballC')
+#install.packages('LDAvis')
+#install.packages('servr')
 
 # Load libraries
 # ==============
@@ -18,6 +20,8 @@ library(tidyverse)
 library(tm)
 library(text2vec)
 library(SnowballC)
+library(LDAvis)
+library(servr)
 
 # Reading files
 # =============
@@ -63,7 +67,7 @@ prep_fun <- function(x) {
     str_replace_all("\\s[A-Za-z][^\\dA-Za-z]", " ")
 }
 
-# stemming
+# stemming (could use word_tokenizer instead)
 tok_fun <- function(x) {
   tokens <- word_tokenizer(x)
   lapply(tokens, SnowballC::wordStem, language="en")
@@ -127,14 +131,30 @@ word_vectors <- lda_model$get_top_words(n = 50, lambda = 1)
 word_vectors_to_write <- data.frame(word_vectors)
 names(word_vectors_to_write) <- paste0('topic_', 1:topics_number)
 
-# topics for each document
+# topics for each document (may add award column)
+files_short <- list.files(dir_input, full.names = FALSE, pattern = "\\.txt$")
+prn_start <- 1
+prn_end <- 8 # first 8 characters are the prn number
+name_start <- 10
+name_end <- 100 # max length; will cut off tail below
 doc_topic_dist_to_write <- 
-  data.frame(files = files) %>% 
+  data.frame(files = files_short, 
+             prn = substr(files_short, prn_start, prn_end),
+             name = str_replace_all(
+               substr(files_short, name_start, name_end),
+               '_Submission.txt', '')
+             ) %>% 
   bind_cols(data.frame(doc_topic_dist))
 names(doc_topic_dist_to_write) <- 
-  c('file_name', paste0('topic_', 1:topics_number))
+  c('file_name', 'prn', 'name', paste0('topic_', 1:topics_number))
 
 # Writing LDA results
 # ===================
 fwrite(word_vectors_to_write, 'result/whole_word_vectors_for_each_topic.csv')
 fwrite(doc_topic_dist_to_write, 'result/whole_doc_topic_probabilities.csv')
+
+
+# Create visualization
+# ====================
+lda_model$plot(out.dir = "result/ldavis", 
+               open.browser=FALSE, reorder.topics = FALSE)

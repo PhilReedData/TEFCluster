@@ -7,6 +7,9 @@ Uses [TEF data from Office for Students](https://www.officeforstudents.org.uk/ad
 
 Use LDA clustering technique as in <a href="https://www.research.manchester.ac.uk/portal/en/publications/corporate-social-responsibility-reports(111f0746-0250-4206-a4a9-300b5e39df59).html">previous work</a>.
 
+Perform the text2vec process after cleaning the data, then 
+create a visualisation of the topics.
+
 ## Directory structure
 `data/`
 
@@ -19,16 +22,23 @@ Use LDA clustering technique as in <a href="https://www.research.manchester.ac.u
         - `PROVIDER_TEFUKPRN` underscore `PROVIDER_NAME` underscore `.pdf`
     - `TEFYearTwo_AllSubmissions_txt/` folder
         - We convert all the PDF documents to TXT files.
-    - `TEFYearTwo_AllSubmissions_txt_pl2sin/` folder
-        - We replace all plural words with the singular forms.
-- `input/`
-    - ...
+    - (`TEFYearTwo_AllSubmissions_txt_pl2sin/` folder) _to do_
+        - (We replace all plural words with the singular forms.) _to do_
+- `processed/`
+    - `tdm.rds` text document matrix data
 
 `code/` 
 
-  - `convert_pdf2txt.R` (convert directory in one go)
-  - ... (convert plural to singular for whole directory)
-  - `text2vec_whole.R` (perform LDA)
+- `convert_pdf2txt.R` Convert directory in one go from PDF to txt
+- ... (convert plural to singular for whole directory) _to do_
+- `text2vec_whole.R` Perform LDA and create visualization
   - ...
 
+`result`
 
+- `LDA_plot.Rmd` The knitR file to launch the visualization
+- `LDA_plot.html` The knitted visualization
+- `whole_doc_topic_probabilities.csv` Probability of each topic in each doc
+- `whole_word_vectors_for_each_topic.csv` Which words occur in which topics
+- `ldavis/' folder
+   - The HTML, CSS and JavaScript files for the `LDA_plot.html` file
