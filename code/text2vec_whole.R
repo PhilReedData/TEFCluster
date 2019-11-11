@@ -108,7 +108,7 @@ saveRDS(dtm, 'data/processed/dtm.rds')
 
 # LDA model
 # =========
-topics_number <- 100
+topics_number <- 50
 
 # set seed to provide reproducibility
 set.seed(7654)
