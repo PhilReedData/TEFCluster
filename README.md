@@ -15,6 +15,35 @@ Use LDA clustering technique as in <a href="https://www.research.manchester.ac.u
 Perform the text2vec process after cleaning the data, then 
 create a visualisation of the topics.
 
+
+## Analysis
+
+### Most salient terms
+These terms are most important within the identified topics.
+
+|Rank|	Whole |	Gold	|Silver	|Bronze|
+|----|--------|-------|-------|------|
+|1	|student	|student|	student|	student|
+|2|	univers|	univers|	univers	|colleg|
+|3	|colleg	|teach	|colleg|	univers|
+|4	|learn	|colleg	|learn|	teach|
+|5	|support	|learn	|teach	|progamm|
+
+### Most frequent terms
+
+These terms are most frequent, regardless of topics.
+
+|Rank|	Whole |	Gold	|Silver	|Bronze|
+|----|--------|-------|-------|------|
+|1	|student	|student	|student	|student|
+|2	|univers	|univers	|learn	|learn|
+|3	|learn	|support	|univers	|colleg|
+|4	|support	|teach	|develop	|support|
+|5	|teach	|learn	|teach	|develop|
+
+### Major topics
+__to do__
+
 ## Directory structure
 `data/`
 
