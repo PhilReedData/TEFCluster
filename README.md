@@ -1,10 +1,11 @@
 # TEFCluster
 Explore the Teaching Excellence Framework (TEF) submissions using clustering and related techniques. Work by Phil Reed for PGCert assignment 2019-20. 
 
-Jump straight to [whole visualisation](result/LDA_plot.html), 
-[gold visualisation](result/LDA_plot_gold.html), 
-[silver visualisation](result/LDA_plot_silver.html) and 
-[bronze visualisation](result/LDA_plot_bronze.html) _work in progress_
+- Jump straight to [whole visualisation](result/LDA_plot.html), 
+  [🥇gold visualisation](result/LDA_plot_gold.html), 
+  [🥈silver visualisation](result/LDA_plot_silver.html) and 
+  [🥉bronze visualisation](result/LDA_plot_bronze.html)
+- _work in progress_
 
 Uses [TEF data from Office for Students](https://www.officeforstudents.org.uk/advice-and-guidance/teaching/tef-data/get-the-data/).
 
@@ -22,7 +23,7 @@ create a visualisation of the topics.
 These terms are most important within the identified topics.
 
 |Rank|	Whole |	Gold	|Silver	|Bronze|
-|----|--------|-------|-------|------|
+|---:|--------|-------|-------|------|
 |1	|student	|student|	student|	student|
 |2|	univers|	univers|	univers	|colleg|
 |3	|colleg	|teach	|colleg|	univers|
@@ -34,7 +35,7 @@ These terms are most important within the identified topics.
 These terms are most frequent, regardless of topics.
 
 |Rank|	Whole |	Gold	|Silver	|Bronze|
-|----|--------|-------|-------|------|
+|---:|--------|-------|-------|------|
 |1	|student	|student	|student	|student|
 |2	|univers	|univers	|learn	|learn|
 |3	|learn	|support	|univers	|colleg|
@@ -42,7 +43,7 @@ These terms are most frequent, regardless of topics.
 |5	|teach	|learn	|teach	|develop|
 
 ### Major topics
-__to do__
+_to do_
 
 ## Directory structure
 `data/`
