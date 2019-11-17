@@ -7,7 +7,7 @@ output: html_document
 ## LDA plot
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>LDAvis</title>
+  <title>TEF 2017 LDAvis</title>
   <script src="ldavis/d3.v3.js"></script>
   <script src="ldavis/ldavis.js"></script>
   <link rel="stylesheet" type="text/css" href="ldavis/lda.css">

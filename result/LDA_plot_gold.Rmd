@@ -7,15 +7,15 @@ output: html_document
 ## LDA plot
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>LDAvis</title>
-  <script src="ldavis/d3.v3.js"></script>
-  <script src="ldavis/ldavis.js"></script>
-  <link rel="stylesheet" type="text/css" href="ldavis/lda.css">
+  <title>Gold TEF 2017 LDAvis</title>
+  <script src="gold_ldavis/d3.v3.js"></script>
+  <script src="gold_ldavis/ldavis.js"></script>
+  <link rel="stylesheet" type="text/css" href="gold_ldavis/lda.css">
 </head>
 
 <body>
   <div id = "lda"></div>
   <script>
-    var vis = new LDAvis("#lda", "ldavis/lda.json");
+    var vis = new LDAvis("#lda", "gold_ldavis/lda.json");
   </script>
 </body>

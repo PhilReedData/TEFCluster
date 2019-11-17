@@ -1,7 +1,10 @@
 # TEFCluster
 Explore the Teaching Excellence Framework (TEF) submissions using clustering and related techniques. Work by Phil Reed for PGCert assignment 2019-20. 
 
-Jump straight to [whole visualisation](result/LDA_plot.html) and [gold visualisation](result/LDA_plot_gold.html) _work in progress_
+Jump straight to [whole visualisation](result/LDA_plot.html), 
+[gold visualisation](result/LDA_plot_gold.html), 
+[silver visualisation](result/LDA_plot_silver.html) and 
+[bronze visualisation](result/LDA_plot_bronze.html) _work in progress_
 
 Uses [TEF data from Office for Students](https://www.officeforstudents.org.uk/advice-and-guidance/teaching/tef-data/get-the-data/).
 
@@ -30,12 +33,16 @@ create a visualisation of the topics.
 - `processed/`
     - `tdm.rds` text document matrix data
     - `gold_tdm.rds`
+    - `silver_tdm.rds`
+    - `bronze_tdm.rds`
 
 `code/` 
 
 - `convert_pdf2txt.R` Convert directory in one go from PDF to txt
 - `text2vec_whole.R` Perform LDA (column for award) and create visualization
-- `text2vec_gold.R` Perform LDA (column for award) and create visualization
+- `text2vec_gold.R` Just gold awarded institutions (run after 'whole')
+- `text2vec_silver.R` Just silver awarded institutions (run after 'whole')
+- `text2vec_bronze.R` Just bronze awarded institutions (run after 'whole')
 
 `result/`
 
@@ -50,9 +57,18 @@ create a visualisation of the topics.
 - `gold_doc_topic_probabilities.csv`
 - `gold_word_vectors_for_each_topic.csv`
 - `gold_ldavis/` folder
+- `LDA_plot_silver.Rmd`
+- [`LDA_plot_silver.html`](result/LDA_plot_silver.html) 
+- `silver_doc_topic_probabilities.csv`
+- `silver_word_vectors_for_each_topic.csv`
+- `silver_ldavis/` folder
+- `LDA_plot_bronze.Rmd`
+- [`LDA_plot_bronze.html`](result/LDA_plot_bronze.html) 
+- `bronze_doc_topic_probabilities.csv`
+- `bronze_word_vectors_for_each_topic.csv`
+- `bronze_ldavis/` folder
 
 ## Next steps
 - Further clean the data, manual work, maybe tokenize instead of stem.
 - Identify what the major topics are and which ones used by which applicants.
-- Continue visualisation for the gold/silver/bronze award.
 - Consider HE/FE and other splits.

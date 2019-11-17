@@ -1,0 +1,21 @@
+---
+title: "TEF 2017 Silver LDA plot for 50 topics"
+
+output: html_document
+---
+
+## LDA plot
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Silver TEF 2017 LDAvis</title>
+  <script src="silver_ldavis/d3.v3.js"></script>
+  <script src="silver_ldavis/ldavis.js"></script>
+  <link rel="stylesheet" type="text/css" href="silver_ldavis/lda.css">
+</head>
+
+<body>
+  <div id = "lda"></div>
+  <script>
+    var vis = new LDAvis("#lda", "silver_ldavis/lda.json");
+  </script>
+</body>

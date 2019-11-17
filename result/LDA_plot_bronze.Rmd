@@ -1,0 +1,21 @@
+---
+title: "TEF 2017 Bronze LDA plot for 50 topics"
+
+output: html_document
+---
+
+## LDA plot
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Bronze TEF 2017 LDAvis</title>
+  <script src="bronze_ldavis/d3.v3.js"></script>
+  <script src="bronze_ldavis/ldavis.js"></script>
+  <link rel="stylesheet" type="text/css" href="bronze_ldavis/lda.css">
+</head>
+
+<body>
+  <div id = "lda"></div>
+  <script>
+    var vis = new LDAvis("#lda", "bronze_ldavis/lda.json");
+  </script>
+</body>
