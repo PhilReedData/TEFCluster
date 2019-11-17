@@ -1,7 +1,7 @@
 # TEFCluster
 Explore the Teaching Excellence Framework (TEF) submissions using clustering and related techniques. Work by Phil Reed for PGCert assignment 2019-20. 
 
-[Jump straight to visualisation](result/LDA_plot.html) _work in progress_
+Jump straight to [whole visualisation](result/LDA_plot.html) and [gold visualisation](result/LDA_plot_gold.html) _work in progress_
 
 Uses [TEF data from Office for Students](https://www.officeforstudents.org.uk/advice-and-guidance/teaching/tef-data/get-the-data/).
 
@@ -29,11 +29,13 @@ create a visualisation of the topics.
         - (We replace all plural words with the singular forms.) _to do_
 - `processed/`
     - `tdm.rds` text document matrix data
+    - `gold_tdm.rds`
 
 `code/` 
 
 - `convert_pdf2txt.R` Convert directory in one go from PDF to txt
 - `text2vec_whole.R` Perform LDA (column for award) and create visualization
+- `text2vec_gold.R` Perform LDA (column for award) and create visualization
 
 `result/`
 
@@ -43,9 +45,14 @@ create a visualisation of the topics.
 - `whole_word_vectors_for_each_topic.csv` Which words occur in which topics
 - `ldavis/` folder
    - The HTML, CSS and JavaScript files for the `LDA_plot.html` file
+- `LDA_plot_gold.Rmd`
+- [`LDA_plot_gold.html`](result/LDA_plot_gold.html) 
+- `gold_doc_topic_probabilities.csv`
+- `gold_word_vectors_for_each_topic.csv`
+- `gold_ldavis/` folder
 
 ## Next steps
 - Further clean the data, manual work, maybe tokenize instead of stem.
 - Identify what the major topics are and which ones used by which applicants.
-- Consider visualisation for the gold/silver/bronze award.
+- Continue visualisation for the gold/silver/bronze award.
 - Consider HE/FE and other splits.
