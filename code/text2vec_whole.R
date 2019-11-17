@@ -17,6 +17,7 @@
 # ==============
 library(data.table)
 library(tidyverse)
+library(readxl)
 library(tm)
 library(text2vec)
 library(SnowballC)
@@ -30,6 +31,37 @@ library(servr)
 # Not written the plural to singular code or dir yet
 dir_input <- 'data/raw/TEFYearTwo_AllSubmissions_txt'
 files <- list.files(dir_input, full.names = TRUE, pattern = "\\.txt$")
+files_short <- list.files(dir_input, full.names = FALSE, pattern = "\\.txt$")
+prn_start <- 1
+prn_end <- 8 # first 8 characters are the prn number
+name_start <- 10
+name_end <- 100 # max length; will cut off tail below
+# Get vector of just the prn index numbers
+files_prns <- sapply(files_short, USE.NAMES = FALSE, 
+                     function(x) substr(x, prn_start, prn_end))
+
+# Read award data from Excel, keep those we have files for, sorted by prn
+award_excel <- 'data/raw/tefyeartwo_awards.xlsx'
+award_sheet <- 'TEF2017 Awards'
+award_range <- 'A5:G300'
+award_df <- read_excel(award_excel, sheet=award_sheet, range = award_range) %>%
+  select('Provider UKPRN', 'TEF Year Two award') %>%
+  rename(prn = 'Provider UKPRN', award = 'TEF Year Two award') %>%
+  filter(prn %in% files_prns)
+# Sort the awards by prn
+award_df <- award_df[order(award_df$prn),]
+# Find missing awards and add to award_df
+missing_prns <- setdiff(files_prns, award_df$prn)
+award_df <- add_row(award_df, prn = missing_prns, award = 'Missing')
+# Sort again
+award_df <- award_df[order(award_df$prn),]
+# Should be same length
+#length(files_prns) == nrow(award_df)
+# Make vectors of prn for each award
+gold_prns <- award_df[award_df$award == 'Gold', ][['prn']]
+silver_prns <- award_df[award_df$award == 'Silver', ][['prn']]
+bronze_prns <- award_df[award_df$award == 'Bronze', ][['prn']]
+
 
 # Load text content of files into list
 text_list <- lapply(files, 
@@ -40,6 +72,7 @@ text_list <- lapply(files,
 ## rbindlist() requires data.table package; may be able to use rbind() instead
 textdf <- rbindlist(text_list) 
 #textdf <- rbind(text_list) 
+# Document ID is an interger index. Maybe should use the prn ID instead.
 textdf <- textdf %>% 
   bind_cols(data.frame(document_id = 1:nrow(textdf))) %>%
   mutate(document_txt = as.character(document_txt))
@@ -48,6 +81,7 @@ textdf <- textdf %>%
 setDT(textdf)
 setkey(textdf, document_id)
 set.seed(2017L)
+
 
 
 # Create document-term matrix
@@ -131,12 +165,8 @@ word_vectors <- lda_model$get_top_words(n = 50, lambda = 1)
 word_vectors_to_write <- data.frame(word_vectors)
 names(word_vectors_to_write) <- paste0('topic_', 1:topics_number)
 
-# topics for each document (may add award column)
-files_short <- list.files(dir_input, full.names = FALSE, pattern = "\\.txt$")
-prn_start <- 1
-prn_end <- 8 # first 8 characters are the prn number
-name_start <- 10
-name_end <- 100 # max length; will cut off tail below
+# topics for each document, including the award
+# Bind data frames assuming same order and number of rows
 doc_topic_dist_to_write <- 
   data.frame(files = files_short, 
              prn = substr(files_short, prn_start, prn_end),
@@ -144,9 +174,10 @@ doc_topic_dist_to_write <-
                substr(files_short, name_start, name_end),
                '_Submission.txt', '')
              ) %>% 
+  bind_cols(select(award_df, award)) %>%
   bind_cols(data.frame(doc_topic_dist))
 names(doc_topic_dist_to_write) <- 
-  c('file_name', 'prn', 'name', paste0('topic_', 1:topics_number))
+  c('file_name', 'prn', 'name', 'award', paste0('topic_', 1:topics_number))
 
 # Writing LDA results
 # ===================

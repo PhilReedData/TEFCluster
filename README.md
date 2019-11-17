@@ -18,6 +18,7 @@ create a visualisation of the topics.
 - `raw/` (excluded from version control)
     - `tef_y2_allcontext.csv` 
     - `tef_y2_allmetrics.csv`
+    - `tefyeartwo_awards.xlsx`
     - `TEFYearTwo_AllSubmissions/` folder
         - 232 files with names such as:
         - `10000055_Abingdon and Witney College_Submission.pdf`
@@ -32,9 +33,7 @@ create a visualisation of the topics.
 `code/` 
 
 - `convert_pdf2txt.R` Convert directory in one go from PDF to txt
-- ... (convert plural to singular for whole directory) _to do_
-- `text2vec_whole.R` Perform LDA and create visualization
-  - ...
+- `text2vec_whole.R` Perform LDA (column for award) and create visualization
 
 `result/`
 
@@ -48,5 +47,5 @@ create a visualisation of the topics.
 ## Next steps
 - Further clean the data, manual work, maybe tokenize instead of stem.
 - Identify what the major topics are and which ones used by which applicants.
-- Consider the gold/silver/bronze award (perhaps three visualisations).
+- Consider visualisation for the gold/silver/bronze award.
 - Consider HE/FE and other splits.
