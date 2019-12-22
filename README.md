@@ -1,7 +1,7 @@
 # TEFCluster
 Explore the Teaching Excellence Framework (TEF) submissions using clustering and related techniques. Work by Phil Reed for PGCert assignment 2019-20. 
 
-- Jump straight to [whole visualisation](result/LDA_plot.html)
+- See the [🇬🇧whole visualisation](result/LDA_plot.html)
 - See breakdown by award:
   [🥇gold visualisation](result/LDA_plot_gold.html), 
   [🥈silver visualisation](result/LDA_plot_silver.html) and 
@@ -31,27 +31,105 @@ create a visualisation of the topics that are automatically identified.
 ### Most salient terms
 These terms are most important within the identified topics.
 
-|Rank|	Whole |	Gold	|Silver	|Bronze|
-|---:|--------|-------|-------|------|
-|1	|student	|student|	student|	student|
-|2|	univers|	univers|	univers	|colleg|
-|3	|colleg	|teach	|colleg|	univers|
-|4	|learn	|colleg	|learn|	teach|
-|5	|support	|learn	|teach	|progamm|
+|Rank|	🇬🇧Whole |🥇Gold	|🥈Silver|🥉Bronze|🏨HEI | 🏫LEC |
+|---:|--------|-------|-------|------|----|-----|
+|1	|student	|student|	student|	student|univers|colleg |
+|2|	univers|	univers|	univers	|colleg|student|student |
+|3	|colleg	|teach	|colleg|	univers|teach |learn |
+|4	|learn	|colleg	|learn|	teach|learn|educ |
+|5	|support	|learn	|teach	|progamm|employ |support |
 
 ### Most frequent terms
 
 These terms are most frequent, regardless of topics.
 
-|Rank|	Whole |	Gold	|Silver	|Bronze|
-|---:|--------|-------|-------|------|
-|1	|student	|student	|student	|student|
-|2	|univers	|univers	|learn	|learn|
-|3	|learn	|support	|univers	|colleg|
-|4	|support	|teach	|develop	|support|
-|5	|teach	|learn	|teach	|develop|
+|Rank|	🇬🇧Whole |🥇Gold	|🥈Silver|🥉Bronze|🏨HEI | 🏫LEC |
+|---:|--------|-------|-------|------|----|-----|
+|1	|student	|student	|student	|student| student|  student|
+|2	|univers	|univers	|learn	|learn|univers| colleg|
+|3	|learn	|support	|univers	|colleg|learn | support|
+|4	|support	|teach	|develop	|support|support | learn|
+|5	|teach	|learn	|teach	|develop| teach | develop|
 
 ### Major topics
+These are the five 'largest' topics for each study. 
+They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
+
+#### 🇬🇧Whole
+
+|Topic 1 | Topic 2 | Topic 3 | Topic 4 | Topic 5 |
+|--------|---------|---------|---------|---------|
+|support |teach    |work     |learn    |univers|
+|student |learn    |research |employ   |student|
+|learn   |student  |graduat  |support  |teach|
+|develop |success  |learn    |teach    |undergradu|
+|includ  |experi   |employ   |skill    |studi|
+
+![whole intertopic distance map](results/maps/map1_whole.png)
+
+#### 🥇Gold
+
+|Topic 1 | Topic 2 | Topic 3 | Topic 4 | Topic 5 |
+|--------|---------|---------|---------|---------|
+|student |univers  |student  |practic  |well |
+|support |teach    |academ   |staff    |first |
+|improv  |student  |support  |learn    |year |
+|research|learn    |also     |feedback |provid |
+|inform  |studi    |use      |includ   |three |
+
+![gold intertopic distance map](results/maps/map2_gold.png)
+
+#### 🥈Silver
+
+|Topic 1 | Topic 2 | Topic 3 | Topic 4 | Topic 5 |
+|--------|---------|---------|---------|---------|
+|develop |learn    |student  |student  |colleg   |
+|learn   |develop  |provid   |metric   |student |
+|teach   |programm |programm |tef      |part    |
+|profession|student|feedback |employ   |progress|
+|staff   |support  |learn    |data     |work    |
+
+![silver intertopic distance map](results/maps/map3_silver.png)
+
+#### 🥉Bronze
+
+|Topic 1 | Topic 2 | Topic 3 | Topic 4 | Topic 5 |
+|--------|---------|---------|---------|---------|
+|employ  |student  |student  |colleg   |learn|
+|work    |learn    |staff    |higher   |ukprn|
+|skill   |develop  |develop  |provis   |can|
+|feedback|project  |support  |develop  |name|
+|use     |support  |higher   |learn    |event|
+
+![bronze intertopic distance map](results/maps/map4_bronze.png)
+
+
+#### 🏨HEI
+
+|Topic 1 | Topic 2 | Topic 3 | Topic 4 | Topic 5 |
+|--------|---------|---------|---------|---------|
+|student |learn    |univers  |develop  |support |
+|feedback|develop  |student  |learn    |employ |
+|academ  |work     |employ   |research |teach |
+|offer   |experi   |studi    |staff    |sector |
+|work    |profession|enhanc  |institut |improv | 
+|librari |staff    |engag    |provid   |work |
+
+![HEI intertopic distance map](results/maps/map5_hei.png)
+
+#### 🏫FEC
+
+|Topic 1 | Topic 2 | Topic 3 | Topic 4 | Topic 5 |
+|--------|---------|---------|---------|---------|
+|student |student  |colleg   |employ   |student|
+|support |develop  |educ     |higher   |within|
+|skill   |learn    |learn    |progress |engag|
+|use     |support  |work     |programm |academ|
+|cours   |skill    |provis   |student  |develop|
+
+![FEC intertopic distance map](results/maps/map6_fec.png)
+
+
 _to do_
 
 ## Directory structure
@@ -120,6 +198,15 @@ _to do_
 - `fec_doc_topic_probabilities.csv`
 - `fec_word_vectors_for_each_topic.csv`
 - `fec_ldavis/` folder
+- `maps/` folder
+   - `map1_whole.png` Intertopic distance map for whole
+   - `map2_gold.png` Intertopic distance map for gold
+   - `map3_silver.png` Intertopic distance map for silver
+   - `map4_bronze.png` Intertopic distance map for bronze
+   - `map5_hei.png` Intertopic distance map for HEI
+   - `map6_fec.png` Intertopic distance map for FEC
+   
+   
 
 ## Next steps
 - Further clean the data, manual work, maybe tokenize instead of stem.
