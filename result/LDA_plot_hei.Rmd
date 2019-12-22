@@ -1,0 +1,21 @@
+---
+title: "TEF 2017 HEI LDA plot for 50 topics"
+
+output: html_document
+---
+
+## LDA plot
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>HEI TEF 2017 LDAvis</title>
+  <script src="hei_ldavis/d3.v3.js"></script>
+  <script src="hei_ldavis/ldavis.js"></script>
+  <link rel="stylesheet" type="text/css" href="hei_ldavis/lda.css">
+</head>
+
+<body>
+  <div id = "lda"></div>
+  <script>
+    var vis = new LDAvis("#lda", "hei_ldavis/lda.json");
+  </script>
+</body>

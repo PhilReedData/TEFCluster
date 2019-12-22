@@ -1,20 +1,29 @@
 # TEFCluster
 Explore the Teaching Excellence Framework (TEF) submissions using clustering and related techniques. Work by Phil Reed for PGCert assignment 2019-20. 
 
-- Jump straight to [whole visualisation](result/LDA_plot.html), 
+- Jump straight to [whole visualisation](result/LDA_plot.html)
+- See breakdown by award:
   [🥇gold visualisation](result/LDA_plot_gold.html), 
   [🥈silver visualisation](result/LDA_plot_silver.html) and 
   [🥉bronze visualisation](result/LDA_plot_bronze.html)
+- See breakdown by level: [🏨HEI visualisation](result/LDA_plot_hei.html) and
+  [🏫FEC visualisation](result/LDA_plot_fec.html)
 - _work in progress_
 
-Uses [TEF data from Office for Students](https://www.officeforstudents.org.uk/advice-and-guidance/teaching/tef-data/get-the-data/).
+An exploration of further analysis that could be used for TEF, following 
+[Evidencing teaching excellence](https://s3.eu-west-2.amazonaws.com/assets.creode.advancehe-document-manager/documents/hea/private/hub/download/TEF2%20Provider%20Submissions%20Review_2_1568037563.pdf): 
+Analysis of the TEF2 provider submissions, by Joanne Moore, Louise Higham and 
+John Sanders (ARC Network), in partnership with Steven Jones, Duygy Candarli 
+(University of Manchester) and Anna Mountford-Zimdars (University of Exeter).
+
+Uses [TEF data from Office for Students](https://www.officeforstudents.org.uk/advice-and-guidance/teaching/tef-data/get-the-data/). 
 
 ## Method
 
 Use LDA clustering technique as in <a href="https://www.research.manchester.ac.uk/portal/en/publications/corporate-social-responsibility-reports(111f0746-0250-4206-a4a9-300b5e39df59).html">previous work</a>.
 
 Perform the text2vec process after cleaning the data, then 
-create a visualisation of the topics.
+create a visualisation of the topics that are automatically identified.
 
 
 ## Analysis
@@ -65,6 +74,8 @@ _to do_
     - `gold_tdm.rds`
     - `silver_tdm.rds`
     - `bronze_tdm.rds`
+    - `hei_tdm.rds`
+    - `fec_tdm.rds`
 
 `code/` 
 
@@ -73,6 +84,8 @@ _to do_
 - `text2vec_gold.R` Just gold awarded institutions (run after 'whole')
 - `text2vec_silver.R` Just silver awarded institutions (run after 'whole')
 - `text2vec_bronze.R` Just bronze awarded institutions (run after 'whole')
+- `text2vec_hei.R` Just 'HigherEducationInstitution' (run after 'whole')
+- `text2vec_fec.R` Just 'FurtherEducationCollege' (run after 'whole')
 
 `result/`
 
@@ -97,8 +110,17 @@ _to do_
 - `bronze_doc_topic_probabilities.csv`
 - `bronze_word_vectors_for_each_topic.csv`
 - `bronze_ldavis/` folder
+- `LDA_plot_hei.Rmd`
+- [`LDA_plot_hei.html`](result/LDA_plot_hei.html) 
+- `hei_doc_topic_probabilities.csv`
+- `hei_word_vectors_for_each_topic.csv`
+- `hei_ldavis/` folder
+- `LDA_plot_fec.Rmd`
+- [`LDA_plot_rec.html`](result/LDA_plot_fec.html) 
+- `fec_doc_topic_probabilities.csv`
+- `fec_word_vectors_for_each_topic.csv`
+- `fec_ldavis/` folder
 
 ## Next steps
 - Further clean the data, manual work, maybe tokenize instead of stem.
 - Identify what the major topics are and which ones used by which applicants.
-- Consider HE/FE and other splits.

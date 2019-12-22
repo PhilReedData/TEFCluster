@@ -1,0 +1,21 @@
+---
+title: "TEF 2017 FEC LDA plot for 50 topics"
+
+output: html_document
+---
+
+## LDA plot
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>FEC TEF 2017 LDAvis</title>
+  <script src="fec_ldavis/d3.v3.js"></script>
+  <script src="fec_ldavis/ldavis.js"></script>
+  <link rel="stylesheet" type="text/css" href="fec_ldavis/lda.css">
+</head>
+
+<body>
+  <div id = "lda"></div>
+  <script>
+    var vis = new LDAvis("#lda", "fec_ldavis/lda.json");
+  </script>
+</body>
