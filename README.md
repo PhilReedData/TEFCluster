@@ -25,6 +25,7 @@ Use LDA clustering technique as in <a href="https://www.research.manchester.ac.u
 Perform the text2vec process after cleaning the data, then 
 create a visualisation of the topics that are automatically identified.
 
+Analyse the results, look for trends.
 
 ## Analysis
 
@@ -81,6 +82,7 @@ See the [🇬🇧whole visualisation](result/LDA_plot.html)
 ![whole intertopic distance map](result/maps/map1_whole.png)
 
 - Topics have been identified in ...
+- Much overlap between topics.
 
 #### 🥇Gold
 See the [🥇gold visualisation](result/LDA_plot_gold.html)
@@ -125,6 +127,7 @@ See the   [🥉bronze visualisation](result/LDA_plot_bronze.html)
 
 ![bronze intertopic distance map](result/maps/map4_bronze.png)
 
+- No particular differences between gold, silver and bronze awarded institutions.
 
 #### 🏨HEI
 See the [🏨HEI visualisation](result/LDA_plot_hei.html) 
@@ -154,8 +157,16 @@ See the   [🏫FEC visualisation](result/LDA_plot_fec.html)
 
 ![FEC intertopic distance map](result/maps/map6_fec.png)
 
+## Conclusions
 
 _to do_
+
+- LDA analysis can help to further understand the results as a whole.
+- Reassured that we can confirm expectations (main focus is students, teaching and learning).
+- Begun to identify topics but there is much overlap.
+- No outstanding differences between gold, silver and bronze awarded institutions.
+- Requires more work to refine process, might work better if the data set was larger.
+- Could extend to look at multiple years of submissions.
 
 ## Directory structure
 `data/`
