@@ -51,11 +51,23 @@ These terms are most frequent, regardless of topics.
 |4	|support	|teach	|develop	|support|support | learn|
 |5	|teach	|learn	|teach	|develop| teach | develop|
 
+- All institutions talk about students more than anything else.
+- HEI insitutions talk about universities, while LEC institutions talk about colleges, as one might expect (although this could be when they mention their own name)
+- HEI institutions talk more about employment/employability and teaching than FEC.
+- All institutions talk about teaching and/or learning a lot.
+- Gold and bronze institutions talk a lot about support.
+
 ### Major topics
-These are the five 'largest' topics for each study. 
-They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
+These are the six most salient terms from each of the five 'largest' topics
+for each study. 
+
+- The tables are excerpts from the `*_word_vectors_for_each_topic.csv` files.
+- The charts are intertopic distance maps where each circle is a topic and
+topic 1 is coloured red. Topics with similar terms appear close on the chart.
+- See the visualisations for each study for interactive maps and tables with percentages.
 
 #### 🇬🇧Whole
+See the [🇬🇧whole visualisation](result/LDA_plot.html)
 
 |Topic 1 | Topic 2 | Topic 3 | Topic 4 | Topic 5 |
 |--------|---------|---------|---------|---------|
@@ -64,10 +76,14 @@ They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
 |learn   |student  |graduat  |support  |teach|
 |develop |success  |learn    |teach    |undergradu|
 |includ  |experi   |employ   |skill    |studi|
+|feedback|demonstr |practic  |profession|academ|
 
 ![whole intertopic distance map](result/maps/map1_whole.png)
 
+- Topics have been identified in ...
+
 #### 🥇Gold
+See the [🥇gold visualisation](result/LDA_plot_gold.html)
 
 |Topic 1 | Topic 2 | Topic 3 | Topic 4 | Topic 5 |
 |--------|---------|---------|---------|---------|
@@ -76,10 +92,13 @@ They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
 |improv  |student  |support  |learn    |year |
 |research|learn    |also     |feedback |provid |
 |inform  |studi    |use      |includ   |three |
+|data    |subject  |person   |programm |take |
 
 ![gold intertopic distance map](result/maps/map2_gold.png)
 
+
 #### 🥈Silver
+See the  [🥈silver visualisation](result/LDA_plot_silver.html) 
 
 |Topic 1 | Topic 2 | Topic 3 | Topic 4 | Topic 5 |
 |--------|---------|---------|---------|---------|
@@ -88,10 +107,12 @@ They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
 |teach   |programm |programm |tef      |part    |
 |profession|student|feedback |employ   |progress|
 |staff   |support  |learn    |data     |work    |
+|practic |staff    |access   |assess   |area    |
 
 ![silver intertopic distance map](result/maps/map3_silver.png)
 
 #### 🥉Bronze
+See the   [🥉bronze visualisation](result/LDA_plot_bronze.html)
 
 |Topic 1 | Topic 2 | Topic 3 | Topic 4 | Topic 5 |
 |--------|---------|---------|---------|---------|
@@ -100,11 +121,13 @@ They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
 |skill   |develop  |develop  |provis   |can|
 |feedback|project  |support  |develop  |name|
 |use     |support  |higher   |learn    |event|
+|student |research |innov    |degree   |offer|
 
 ![bronze intertopic distance map](result/maps/map4_bronze.png)
 
 
 #### 🏨HEI
+See the [🏨HEI visualisation](result/LDA_plot_hei.html) 
 
 |Topic 1 | Topic 2 | Topic 3 | Topic 4 | Topic 5 |
 |--------|---------|---------|---------|---------|
@@ -118,6 +141,7 @@ They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
 ![HEI intertopic distance map](result/maps/map5_hei.png)
 
 #### 🏫FEC
+See the   [🏫FEC visualisation](result/LDA_plot_fec.html)
 
 |Topic 1 | Topic 2 | Topic 3 | Topic 4 | Topic 5 |
 |--------|---------|---------|---------|---------|
@@ -126,6 +150,7 @@ They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
 |skill   |learn    |learn    |progress |engag|
 |use     |support  |work     |programm |academ|
 |cours   |skill    |provis   |student  |develop|
+|develop |work     |curriculum|ensur   |support|
 
 ![FEC intertopic distance map](result/maps/map6_fec.png)
 
