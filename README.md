@@ -65,7 +65,7 @@ They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
 |develop |success  |learn    |teach    |undergradu|
 |includ  |experi   |employ   |skill    |studi|
 
-![whole intertopic distance map](results/maps/map1_whole.png)
+![whole intertopic distance map](result/maps/map1_whole.png)
 
 #### 🥇Gold
 
@@ -77,7 +77,7 @@ They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
 |research|learn    |also     |feedback |provid |
 |inform  |studi    |use      |includ   |three |
 
-![gold intertopic distance map](results/maps/map2_gold.png)
+![gold intertopic distance map](result/maps/map2_gold.png)
 
 #### 🥈Silver
 
@@ -89,7 +89,7 @@ They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
 |profession|student|feedback |employ   |progress|
 |staff   |support  |learn    |data     |work    |
 
-![silver intertopic distance map](results/maps/map3_silver.png)
+![silver intertopic distance map](result/maps/map3_silver.png)
 
 #### 🥉Bronze
 
@@ -101,7 +101,7 @@ They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
 |feedback|project  |support  |develop  |name|
 |use     |support  |higher   |learn    |event|
 
-![bronze intertopic distance map](results/maps/map4_bronze.png)
+![bronze intertopic distance map](result/maps/map4_bronze.png)
 
 
 #### 🏨HEI
@@ -115,7 +115,7 @@ They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
 |work    |profession|enhanc  |institut |improv | 
 |librari |staff    |engag    |provid   |work |
 
-![HEI intertopic distance map](results/maps/map5_hei.png)
+![HEI intertopic distance map](result/maps/map5_hei.png)
 
 #### 🏫FEC
 
@@ -127,7 +127,7 @@ They are excerpts from the `*_word_vectors_for_each_topic.csv` files.
 |use     |support  |work     |programm |academ|
 |cours   |skill    |provis   |student  |develop|
 
-![FEC intertopic distance map](results/maps/map6_fec.png)
+![FEC intertopic distance map](result/maps/map6_fec.png)
 
 
 _to do_
