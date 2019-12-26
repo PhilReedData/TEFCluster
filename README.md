@@ -1,6 +1,20 @@
-# TEFCluster
-Explore the Teaching Excellence Framework (TEF) submissions using clustering and related techniques. Work by Phil Reed for PGCert assignment 2019-20. 
+# Investigating further text analysis techniques with TEF2 statements 
+Exploring the Teaching Excellence Framework (TEF) 2017 submissions 
+using clustering and related techniques to make suggestions for 
+future analysis. 
+Work by Phil Reed for PGCert assignment 2019-20. 
 
+### Contents
+- [Introduction](#introduction)
+- [Method](#method)
+- [Analysis](#analysis)
+- [Conclusions](#conclusions)
+- [References](#references)
+- [Directory structure](#directory-structure)
+- [Next steps](#next-steps)
+
+
+### Figures
 - See the [🇬🇧whole visualisation](result/LDA_plot.html)
 - See breakdown by award:
   [🥇gold visualisation](result/LDA_plot_gold.html), 
@@ -8,15 +22,17 @@ Explore the Teaching Excellence Framework (TEF) submissions using clustering and
   [🥉bronze visualisation](result/LDA_plot_bronze.html)
 - See breakdown by level: [🏨HEI visualisation](result/LDA_plot_hei.html) and
   [🏫FEC visualisation](result/LDA_plot_fec.html)
-- _work in progress_
+
+## Introduction
 
 An exploration of further analysis that could be used for TEF, following 
-[Evidencing teaching excellence](https://s3.eu-west-2.amazonaws.com/assets.creode.advancehe-document-manager/documents/hea/private/hub/download/TEF2%20Provider%20Submissions%20Review_2_1568037563.pdf): 
-Analysis of the TEF2 provider submissions, by Joanne Moore, Louise Higham and 
+_Evidencing teaching excellence: Analysis of the TEF2 provider submissions_,
+by Joanne Moore, Louise Higham and 
 John Sanders (ARC Network), in partnership with Steven Jones, Duygy Candarli 
 (University of Manchester) and Anna Mountford-Zimdars (University of Exeter).
+[[1]](#references)
 
-Uses [TEF data from Office for Students](https://www.officeforstudents.org.uk/advice-and-guidance/teaching/tef-data/get-the-data/). 
+Uses _TEF data from Office for Students_. [[2]](#references)
 
 ## Method
 
@@ -32,7 +48,7 @@ Analyse the results, look for trends.
 ### Most salient terms
 These terms are most important within the identified topics.
 
-|Rank|	🇬🇧Whole |🥇Gold	|🥈Silver|🥉Bronze|🏨HEI | 🏫LEC |
+|Rank|	🇬🇧Whole |🥇Gold	|🥈Silver|🥉Bronze|🏨HEI | 🏫 FEC |
 |---:|--------|-------|-------|------|----|-----|
 |1	|student	|student|	student|	student|univers|colleg |
 |2|	univers|	univers|	univers	|colleg|student|student |
@@ -44,7 +60,7 @@ These terms are most important within the identified topics.
 
 These terms are most frequent, regardless of topics.
 
-|Rank|	🇬🇧Whole |🥇Gold	|🥈Silver|🥉Bronze|🏨HEI | 🏫LEC |
+|Rank|	🇬🇧Whole |🥇Gold	|🥈Silver|🥉Bronze|🏨HEI | 🏫FEC |
 |---:|--------|-------|-------|------|----|-----|
 |1	|student	|student	|student	|student| student|  student|
 |2	|univers	|univers	|learn	|learn|univers| colleg|
@@ -167,6 +183,21 @@ _to do_
 - No outstanding differences between gold, silver and bronze awarded institutions.
 - Requires more work to refine process, might work better if the data set was larger.
 - Could extend to look at multiple years of submissions.
+
+## References
+
+Moore, J, Higham, L, Sanders, J, Jones, S, Candarli, D, Mountford-Zimdars, A 2017, 
+'[Evidencing teaching excellence: Analysis of the TEF2 provider 
+submissions](https://s3.eu-west-2.amazonaws.com/assets.creode.advancehe-document-manager/documents/hea/private/hub/download/TEF2%20Provider%20Submissions%20Review_2_1568037563.pdf)', _Higher Education Academy_.
+
+Office for Students 2019, 
+[TEF data](https://www.officeforstudents.org.uk/advice-and-guidance/teaching/tef-data/get-the-data/), 
+_Office for Students_. 
+
+Poon, S-H, Goloshchapova, I, Pritchard, M & Reed, P 2018, 
+'[Corporate Social Responsibility Reports: Topic Analysis and Big Data 
+Approach](https://www.doi.org/10.1080/1351847X.2019.1572637)',
+_European Journal of Finance_.
 
 ## Directory structure
 `data/`
