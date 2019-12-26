@@ -54,7 +54,7 @@ Work was required to convert and interpret files using R.
 
 LDA (Latent Direchlet Allocation) is a topic modelling technique that has been 
 used to analyse the statements. It has been applied in previous work
-by [Poon et al. (2018)](#5-references). 
+by [Poon, Goloshchapova et al. (2018)](#5-references). 
 The statements (documents) are taken through a series of pre-processing steps 
 including stemming and removing stop-words, then the LDA process 
 ('_text2vec_') is applied. The pre-processing could be further improved 
