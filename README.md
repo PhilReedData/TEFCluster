@@ -1,19 +1,18 @@
-# Investigating further text analysis techniques with TEF2 statements 
+# Investigating further text analysis of TEF2 statements 
 Exploring the Teaching Excellence Framework (TEF) 2017 submissions 
-using topic modelling and related techniques to make suggestions for 
-future analysis. 
+using topic modelling to look for language differences between awards. 
 Work for PGCert assignment 2019-20. 
 
 ### Contents
-- [Introduction](#introduction)
-- [Method](#method)
-- [Analysis](#analysis)
-- [Conclusions](#conclusions)
-- [References](#references)
-- [Directory structure](#directory-structure)
+1. [Introduction](#1-introduction)
+2. [Method](#2-method)
+3. [Analysis](#3-analysis)
+4. [Conclusions](#4-conclusions)
+5. [References](#5-references)
+6. [Directory structure](#6-directory-structure)
 
 
-### Figures
+### Live interactive visualisations
 - See the [🇬🇧whole visualisation](result/LDA_plot.html)
 - See breakdown by award:
   [🥇gold visualisation](result/LDA_plot_gold.html), 
@@ -22,24 +21,18 @@ Work for PGCert assignment 2019-20.
 - See breakdown by level: [🏨HEI visualisation](result/LDA_plot_hei.html) and
   [🏫FEC visualisation](result/LDA_plot_fec.html)
 
-## Introduction
-
-An exploration of further analysis that could be used for TEF, following 
-_Evidencing teaching excellence: Analysis of the TEF2 provider submissions_,
-by Joanne Moore, Louise Higham and 
-John Sanders (ARC Network), in partnership with Steven Jones, Duygy Candarli 
-(University of Manchester) and Anna Mountford-Zimdars (University of Exeter).
-[[1](#references)]
+## 1. Introduction
 
 The Teaching Excellence Framework (TEF) is a major policy initiative in higher 
-education. Moore, Higham and Sanders (2017) explain how the submissions made
-by providers as part of the TEF Year Two (TEF2) process have been used as a 
+education. [Moore, Higham, Sanders et al. (2017)](#5-references) 
+explain how the submissions made
+by providers in the TEF Year Two (TEF2) process provided a 
 detailed source of evidence for excellence in teaching and impact evaluation 
 practice. The Higher Education Academy (HEA) commissioned a research team to 
 devise and undertake a data mining process on the text content of each 
 submission. The results provided an initial guidance of a gold, silver or 
 bronze award, some of which were adjusted by a panel before deciding a final 
-outcome (Kernohan 2017) [[4](#references)].
+outcome ([Kernohan 2017](#5-references)).
 
 There are further data mining techniques and visualisation tools which
 can be used to study the submission texts in the following ways:
@@ -51,19 +44,22 @@ can be used to study the submission texts in the following ways:
 These findings may be able to assist or guide future work. The R programming 
 language has been used to prepare and analyse the data files.
 
-## Method
+## 2. Method
 
 The TEF2 statement texts and award data were downloaded from
-_Office for Students_. [[2](#references)] These data files are available in 
-CSV and/or Excel format. The statements were available in PDF format.  
+the [Office for Students](#5-references) website.
+These data files are available in CSV and/or Excel format. 
+The statements are available in PDF format. 
+Work was required to convert and interpret files using R.
 
-LDA (Latent Direchlet Allocation), a topic modelling technique, is 
-used to analyse the statements. It has been used in previous work (Poon 2018)  [[3](#references)]. 
-The statements are then taken through a series of pre-processing steps 
+LDA (Latent Direchlet Allocation) is a topic modelling technique that has been  
+used to analyse the statements. It has been applied in previous work
+by [Poon et al. 2018](#5-references)). 
+The statements (documents) are taken through a series of pre-processing steps 
 including stemming and removing stop-words, then the LDA process 
 ('_text2vec_') is applied. The pre-processing could be further improved 
-after running the LDA process the first time, by customising the list of 
-stop-words, or by tokenising instead of stemming.
+after running the LDA process the first time by customising the list of 
+stop-words or by tokenising instead of stemming.
 
 The LDA process aims to identify topics that are covered in one or more 
 documents by looking at the frequency and co-occurance of words. A 
@@ -71,25 +67,26 @@ hyper-parameter for this model, 'number of latent topics', was set to 50.
 
 Two output matrices are produced:
 
- - A list of 50 keywords for each of the topics selected
- - The probability of relevance of each topic in each document
+ - A list of 50 keywords for each of the topics selected.
+ - The probability of relevance of each topic in each document.
 
 The six most likely keywords are shown in the analyses below. These lists are 
-useful for identifying garbage terms, which would be removed if re-running 
+useful for identifying garbage terms, some of which could be removed if re-running 
 the process. The identified topics may include terms which a human can identify 
-as being related to the same real topic. Some that arise may make no logical 
-sense to a human.
+as being related to the same real topic. 
 
-The '_LDAvis_' software is used to visualise the topics, which terms have been 
-identified, and how the topics relate to each other (their proximity on the 
-intertopic distance maps, topics with more terms in common appear closer).
-Looking at the _LDAvis_ output can help to further refine the process.
+The '_LDAvis_' software is used to visualise the topics, list which terms have 
+been identified, and map how the topics relate to each other.
+(Topics with more terms in common appear in close proximity on the intertopic 
+distance maps).
+Interpretting the _LDAvis_ output can help to further refine the LDA process.
 
-After running the LDA process on the whole set of documents, it was broken 
-down by the gold, silver and bronze awarded institutions, with a visualisation 
-for each. It was also broken down by higher and further education institutions.
+After running the LDA process on the whole set of documents, it was repeated 
+with subsets for each of the gold, silver and bronze awarded institutions, 
+with a visualisation for each. 
+It was also repeated with subsets for higher and further education institutions.
 
-## Analysis
+## 3. Analysis
 
 ### Most salient terms
 These terms are most important within the identified topics.
@@ -101,6 +98,7 @@ These terms are most important within the identified topics.
 |3	|colleg	|teach	|colleg|	univers|teach |learn |
 |4	|learn	|colleg	|learn|	teach|learn|educ |
 |5	|support	|learn	|teach	|progamm|employ |support |
+|6  |teach   |support | support|support|support|higher|
 
 ### Most frequent terms
 
@@ -113,6 +111,7 @@ These terms are most frequent, regardless of topics.
 |3	|learn	|support	|univers	|colleg|learn | support|
 |4	|support	|teach	|develop	|support|support | learn|
 |5	|teach	|learn	|teach	|develop| teach | develop|
+|6  |colleg  |provid  |employ   |univers|develop|staff|
 
 - All institutions talk about students more than anything else.
 - HEI insitutions talk about universities, while LEC institutions talk about colleges, as one might expect (although this could be when they mention their own name)
@@ -121,8 +120,8 @@ These terms are most frequent, regardless of topics.
 - Gold and bronze institutions talk a lot about support.
 
 ### Major topics
-These are the six most salient terms from each of the five 'largest' topics
-for each study. 
+These are the six most salient terms from each of the five widest distributed
+topics for each study (the largest circles in the visualisation). 
 
 - The tables are excerpts from the `*_word_vectors_for_each_topic.csv` files.
 - The charts are intertopic distance maps where each circle is a topic and
@@ -219,16 +218,16 @@ See the   [🏫FEC visualisation](result/LDA_plot_fec.html)
 
 ![FEC intertopic distance map](result/maps/map6_fec.png)
 
-## Conclusions
+## 4. Conclusions
 
 - LDA analysis can help to further understand the results as a whole.
 - We can be reassured that the process confirms the most obvious expectations (the main focus is students, teaching and learning).
 - We can begin to identify topics but there is much overlap.
 - So far, there are no outstanding differences between gold, silver and bronze awarded institutions.
-- More work is required to refine the process; it might work better if the data set was larger or if the pre-processing was customised further.
+- More work is required to refine the process; it might work better if the data set was larger or if the pre-processing was customised further. The code could be further optimised.
 - We could extend to look at multiple years of submissions.
 
-## References
+## 5. References
 
 Moore, J, Higham, L, Sanders, J, Jones, S, Candarli, D, Mountford-Zimdars, A 2017, 
 '[Evidencing teaching excellence: Analysis of the TEF2 provider 
@@ -247,7 +246,7 @@ Kernohan, D 2017,
 '[TEF results - Who moved up and who fell down?](https://wonkhe.com/blogs/tef-results-who-moved-up-and-who-fell-down/)',
 _Wonkhe_.
 
-## Directory structure
+## 6. Directory structure
 `data/`
 
 - `raw/` (excluded from version control)
