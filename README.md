@@ -32,7 +32,7 @@ practice. The Higher Education Academy (HEA) commissioned a research team to
 devise and undertake a data mining process on the text content of each 
 submission. The results provided an initial guidance of a gold, silver or 
 bronze award, some of which were adjusted by a panel before deciding a final 
-outcome ([Kernohan 2017](#5-references)).
+outcome ([Kernohan (2017)](#5-references)).
 
 There are further data mining techniques and visualisation tools which
 can be used to study the submission texts in the following ways:
@@ -52,9 +52,9 @@ These data files are available in CSV and/or Excel format.
 The statements are available in PDF format. 
 Work was required to convert and interpret files using R.
 
-LDA (Latent Direchlet Allocation) is a topic modelling technique that has been  
+LDA (Latent Direchlet Allocation) is a topic modelling technique that has been 
 used to analyse the statements. It has been applied in previous work
-by [Poon et al. 2018](#5-references)). 
+by [Poon et al. (2018)](#5-references). 
 The statements (documents) are taken through a series of pre-processing steps 
 including stemming and removing stop-words, then the LDA process 
 ('_text2vec_') is applied. The pre-processing could be further improved 
@@ -89,7 +89,9 @@ It was also repeated with subsets for higher and further education institutions.
 ## 3. Analysis
 
 ### Most salient terms
-These terms are most important within the identified topics.
+These terms are most important within the identified topics. 
+Note that all terms have been stemmed (the ends of words are removed so that 
+'support', 'supporting' and 'supported' are treated the same, for example).
 
 |Rank|	🇬🇧Whole |🥇Gold	|🥈Silver|🥉Bronze|🏨HEI | 🏫 FEC |
 |---:|--------|-------|-------|------|----|-----|
@@ -118,6 +120,7 @@ These terms are most frequent, regardless of topics.
 - HEI institutions talk more about employment/employability and teaching than FEC.
 - All institutions talk about teaching and/or learning a lot.
 - Gold and bronze institutions talk a lot about support.
+- In a brief comparison with the study of corporate social responsibility in Poon et al. (2018), the topics identified in TEF2 overlap more; the same terms appear more often in multiple topics. This could mean that TEF2 submissions use a lot of the same language as each other. Further refinement of the LDA process is required to make that claim with confidence.
 
 ### Major topics
 These are the six most salient terms from each of the five widest distributed
