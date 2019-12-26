@@ -62,7 +62,7 @@ after running the LDA process the first time by customising the list of
 stop-words or by tokenising instead of stemming.
 
 The LDA process aims to identify topics that are covered in one or more 
-documents by looking at the frequency and co-occurance of words. A 
+documents by looking at the frequency and co-occurence of words. A 
 hyper-parameter for this model, 'number of latent topics', was set to 50.
 
 Two output matrices are produced:
@@ -79,7 +79,7 @@ The '_LDAvis_' software is used to visualise the topics, list which terms have
 been identified, and map how the topics relate to each other.
 (Topics with more terms in common appear in close proximity on the intertopic 
 distance maps).
-Interpretting the _LDAvis_ output can help to further refine the LDA process.
+Interpreting the _LDAvis_ output can help to further refine the LDA process.
 
 After running the LDA process on the whole set of documents, it was repeated 
 with subsets for each of the gold, silver and bronze awarded institutions, 
@@ -116,7 +116,7 @@ These terms are most frequent, regardless of topics.
 |6  |colleg  |provid  |employ   |univers|develop|staff|
 
 - All institutions talk about students more than anything else.
-- HEI insitutions talk about universities, while LEC institutions talk about colleges, as one might expect (although this could be when they mention their own name)
+- HEI institutions talk about universities, while LEC institutions talk about colleges, as one might expect (although this could be when they mention their own name)
 - HEI institutions talk more about employment/employability and teaching than FEC.
 - All institutions talk about teaching and/or learning a lot.
 - Gold and bronze institutions talk a lot about support.
