@@ -2,6 +2,8 @@
 Exploring the Teaching Excellence Framework (TEF) 2017 submissions 
 using topic modelling to look for language differences between awards. 
 Work for PGCert assignment 2019-20. 
+(All the code is 
+[available on GitHub](https://github.com/PhilReedData/TEFCluster).)
 
 ### Contents
 1. [Introduction](#1-introduction)
